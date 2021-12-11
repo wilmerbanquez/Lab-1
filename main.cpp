@@ -206,6 +206,31 @@ while(div>0){
     }
 }
 }
+case 10:
+{
+int num;
+cout<<"Ingres el numero entero: ";
+cin >>num;
+int cont = 0;
+int count = 0;
+while(count<num){
+    for(long int i=2;i<=2147487483;i++){
+        for(int j=1;j<=i;j++){
+            if(i%j==0)
+                cont++;
+        }
+        if(cont<3){
+            count+=1;
+        }
+        if(count==num){
+            cout<<"El primo numero "<<num<<" es "<<i<<endl;
+            break;
+        }
+        cont = 0;
+    }
+}
+
+}
 }
 return 0;
 }
