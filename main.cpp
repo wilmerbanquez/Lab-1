@@ -59,11 +59,12 @@ case 2:
     cout <<"5000: "<<bil5<<endl;
     cout <<"2000: "<<bil2<<endl;
     cout <<"1000: "<<bil1<<endl<<"500: "<<mon500<<endl<<"200: "<<mon200<<endl<<"100: "<<mon100<<endl<<"50: "<<mon50<<endl<<"faltante: "<<res<<endl;
+    break;
 }
 case 5:
 {
     int num;
- cout <<"Ingrese un número impar: ";
+ cout <<"Ingrese un numero impar: ";
  cin >>num;
  int esp = num/2;
  int asc = 1;
@@ -105,7 +106,7 @@ while(asc>0)
  esp +=1;
  cout <<endl;
 }
-
+break;
 }
 case 4:
 {
@@ -115,38 +116,53 @@ int hora;
 int minuto;
 cout <<"Ingrese el primer numero: ";
 cin >>num1;
-while(num1/100 > 24 or num1%100 > 59){
+while(num1/100 > 24 or num1%100 > 59 or num1>1259 or num1<100){
     cout<<"Ingrese un número válido: "<<endl;
     cin >>num1;
 }
 cout <<"Ingrese el segundo numero: ";
 cin >>num2;
-while(num2/100 > 24 or num2%100 >59){
-    cout<<"Ingrese un número válido: "<<endl;
+while(num2/100 > 24 or num2%100 >59 or num2>1259 or num2<100){
+    cout<<"Ingrese un numero valido: ";
     cin >>num2;
 }
 hora = (num1/100) + (num2/100);
 minuto = (num1%100) + (num2%100);
-if(minuto>60)
-{
-    minuto = minuto-60;
-    hora = hora + 1;
-    if(hora>24)
-        hora = hora-24;
-    cout <<"La hora es: "<<hora<<minuto<<endl;
-}
-else
-{
-if(hora>=24){
+if(hora>=24 and minuto>60){
     hora = hora-24;
-cout <<"La hora es: "<<hora<<minuto<<endl;}
+    minuto = 60 - minuto;
+    hora+=1;
+    cout <<"La hora es "<<hora;
+    cout <<minuto<<endl;
+    break;
 }
+if(hora>=24 and minuto<60){
+    hora = hora-24;
+    cout<<"La hora es "<<hora<<minuto;
+    break;
+}
+if(hora<24 and minuto>60){
+    minuto = 60-minuto;
+    hora = hora+1;
+    cout <<"La hora es "<<hora;
+    cout <<minuto<<endl;
+    break;
+}
+if(hora<24 and minuto<60){
+    cout <<"La hora es "<<hora;
+    cout <<minuto<<endl;
+    break;
+}
+break;
 }
 case 6:
 {
 int num;
 cout<<"Ingrese un numero entero: ";
 cin>>num;
+if(num==0){
+    cout <<"e es aproximadamente 0";
+}
 if(num!=2 and num!=1){
     num = num-1;
     float sum = 0;
@@ -166,6 +182,7 @@ else
         cout <<"e es aproximadamente 2"<<endl;
     if(num==1)
         cout <<"e es aproximadamente 1"<<endl;
+break;
 }
 case 9:
 {
@@ -205,6 +222,7 @@ while(div>0){
         break;
     }
 }
+break;
 }
 case 10:
 {
@@ -229,7 +247,28 @@ while(count<num){
         cont = 0;
     }
 }
-
+break;
+}
+case 13:
+{
+int num;
+cout <<"Ingrese el numero entero: ";
+cin >>num;
+int cont = 0;
+int sum = 0;
+for(int i=2;i<=num;i++){
+    for(int j=1;j<=i;j++){
+        if(i%j==0){
+            cont++;
+        }
+    }
+    if(cont<3){
+        sum = sum + i;
+    }
+    cont= 0;
+}
+cout<<"El resultado de la suma es "<<sum;
+break;
 }
 }
 return 0;
