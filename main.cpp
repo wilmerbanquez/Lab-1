@@ -227,7 +227,7 @@ break;
 case 10:
 {
 int num;
-cout<<"Ingres el numero entero: ";
+cout<<"Ingrese el numero entero: ";
 cin >>num;
 int cont = 0;
 int count = 0;
@@ -269,6 +269,53 @@ for(int i=2;i<=num;i++){
 }
 cout<<"El resultado de la suma es "<<sum;
 break;
+}
+case 16:
+{
+int num;
+cout <<"Ingrese el entero: ";
+cin >>num;
+int count = 1;
+int count1 = 0;
+int aux = num;
+int mayor = 0;
+int elementos;
+while(num!=1){
+    while(aux!=1){
+        if(aux%2!=0){
+            aux = 3*aux + 1;
+            count +=1;
+        }
+        else{
+            aux = aux/2;
+            count +=1;
+        }
+    }
+    if(count>count1){
+        mayor = num;
+        count1 = count;
+        elementos = count;
+    }
+    num-=1;
+    aux = num;
+    if(num==1)
+        break;
+    count = 0;
+}
+cout <<"La serie mas larga es con la semilla " << mayor << " teniendo " << elementos << " elementos "<<endl;
+cout<<mayor<<" ";
+while(mayor!=1){
+    if(mayor%2!=0){
+        mayor = 3*mayor + 1;
+        count +=1;
+        cout <<mayor <<" ";
+    }
+    else{
+        mayor = mayor/2;
+        count +=1;
+        cout <<mayor<<" ";
+    }
+}
 }
 }
 return 0;
