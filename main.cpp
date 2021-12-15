@@ -14,7 +14,6 @@ cout <<"11 para problema 11"<<endl;
 cout <<"13 para problema 13"<<endl;
 cout <<"14 para problema 14"<<endl;
 cout <<"16 para problema 16"<<endl;
-cout <<"0 para salir "<<endl;
 cin >>opcion;
 switch(opcion)
 {
@@ -316,6 +315,7 @@ while(mayor!=1){
         cout <<mayor<<" ";
     }
 }
+break;
 }
 }
 return 0;
