@@ -301,7 +301,7 @@ while(num!=1){
         break;
     count = 0;
 }
-cout <<"La serie mas larga es con la semilla " << mayor << " teniendo " << elementos << " elementos "<<endl;
+cout <<"La serie mas larga es con la semilla " << mayor << " teniendo " << elementos+1 << " elementos "<<endl;
 cout<<mayor<<" ";
 while(mayor!=1){
     if(mayor%2!=0){
